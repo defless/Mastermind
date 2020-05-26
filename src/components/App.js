@@ -1,4 +1,7 @@
 import React,{useState} from 'react';
+
+import History from './History';
+
 import '../styles/App.css';
 
 const PIONS = ["red","green","blue","orange","pink","purple"];
@@ -171,23 +174,6 @@ const Generate_proposition = (props)=> {
       <History propositions={props.propositions}/>
     </React.Fragment>
   )
-}
-
-const History = (props)=> {
-  return(
-    <div id="history">
-    {props.propositions.map((item) => (
-      <div class="history_item">
-        {item.prop.map((item)=>(
-          <button style={{backgroundColor:item}} class="dropbtn"></button>
-        ))}
-        <h3>Blanches {item.b}</h3>
-        <h3>Noires {item.n}</h3>
-        <h3>Tentatives {item.atempts}</h3>
-      </div>
-      ))}
-    </div>
-  );
 }
 
 const Color_picker = (props)=>{
